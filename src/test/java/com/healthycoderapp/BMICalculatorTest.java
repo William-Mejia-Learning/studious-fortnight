@@ -1,9 +1,8 @@
 package com.healthycoderapp;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.DisabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -74,9 +73,12 @@ class BMICalculatorTest {
     }
 
     @Nested
+    @DisplayName("{{}}} sample inner class display name")
     class FindCoderWithWorstBMITests {
 
         @Test
+        @DisplayName(">>>> sample method display name")
+        @DisabledOnOs(OS.WINDOWS)
         void should_ReturnCoderWithWorstBMI_When_CoderListNotEmpty() {
 
             //given
